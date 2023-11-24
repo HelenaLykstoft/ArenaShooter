@@ -1,0 +1,34 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "DefaultInput",
+            "id": "a221bea8-1cea-4fe4-aa26-910057891e8d",
+            "actions": [
+                {
+                    "name": "onPress",
+                    "type": "Button",
+                    "id": "ce7a215a-9ca4-4e53-9aa6-3fd1e2e4ec2e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fd609e08-de05-49b7-9c6b-23457ee8b116",
+                    "path": "<Pointer>/press",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "onPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
