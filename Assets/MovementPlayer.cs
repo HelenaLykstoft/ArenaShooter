@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class MovementPlayer : MonoBehaviour
 {
     private PlayerControls m_playerControls;
-    [SerializeField]private readonly float m_mouseSensitivity = 10.0f;
+    [SerializeField] private readonly float m_mouseSensitivity = 10.0f;
 
     private readonly float m_upDownRange = 55.0f;
     float rotY = 0;
@@ -81,14 +81,22 @@ public class MovementPlayer : MonoBehaviour
             // ray from center of screen
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
+
             if (Physics.Raycast(ray, out hit))
             {
-                // Debug.Log(hit.transform.name);
+
                 if (hit.transform.tag == "Enemy")
                 {
+                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                    Debug.Log("Hit");
                     //Destroy(hit.transform.gameObject);
+
                     hit.transform.GetComponent<Renderer>().material.color = Color.black;
                 }
+                Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
+            }else{
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            Debug.Log("No Hit");
             }
         }
     }
