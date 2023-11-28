@@ -69,10 +69,10 @@ public class MovementPlayer : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * speed);
         }
         // escape locked cursor
-       /* if (Keyboard.current != null && Keyboard.current.escapeKey.isPressed)
+        if (Keyboard.current != null && Keyboard.current.escapeKey.isPressed)
         {
             wantedMode = CursorLockMode.None;
-        }*/
+        }
         // left click to shoot
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
