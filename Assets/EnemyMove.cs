@@ -9,6 +9,8 @@ public class EnemyMove : MonoBehaviour
     public Transform Player;
     private float aggroRange = 15f;
 
+    public int damage = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,11 @@ public class EnemyMove : MonoBehaviour
             else
             {
                 navMeshAgent.isStopped = true; 
-                }
+            }
+            
+            if (Vector3.Distance(transform.position, Player.position) < 2f)
+            {
+                Player.GetComponent<Health>().TakeDamage(damage);
+            }
     }
 }

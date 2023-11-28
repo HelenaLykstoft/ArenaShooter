@@ -91,7 +91,7 @@ public class MovementPlayer : MonoBehaviour
                     Debug.Log("Hit");
                     //Destroy(hit.transform.gameObject);
 
-                    hit.transform.GetComponent<Renderer>().material.color = Color.black;
+                    hit.transform.GetComponent<Health>().TakeDamage(10);
                 }
                 Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
             }else{
