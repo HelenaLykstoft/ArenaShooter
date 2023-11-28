@@ -114,6 +114,7 @@ public class MovementPlayer : MonoBehaviour
 
     void DoStuff(InputAction.CallbackContext context)
     {
+        
         Debug.Log("DoStuff called!");
     }
 
