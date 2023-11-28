@@ -14,6 +14,8 @@ public class MovementPlayer : MonoBehaviour
     [SerializeField] private float speed = 5f;
     CursorLockMode wantedMode;
 
+    public ParticleSystem muzzleFlash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +78,7 @@ public class MovementPlayer : MonoBehaviour
         // left click to shoot
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
+            muzzleFlash.Play();
             RaycastHit hit;
 
             // ray from center of screen
