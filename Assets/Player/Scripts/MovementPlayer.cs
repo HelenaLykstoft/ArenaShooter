@@ -75,8 +75,13 @@ public class MovementPlayer : MonoBehaviour
         {
             wantedMode = CursorLockMode.None;
         }
+        //spacebar to jump
+        if (Keyboard.current != null && Keyboard.current.spaceKey.isPressed)
+        {
+            transform.Translate(Vector3.up * Time.deltaTime * speed);
+        }
         // left click to shoot
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+       /* if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             muzzleFlash.Play();
             RaycastHit hit;
@@ -101,7 +106,7 @@ public class MovementPlayer : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             Debug.Log("No Hit");
             }
-        }
+        }*/
     }
 
     void OnEnable()
