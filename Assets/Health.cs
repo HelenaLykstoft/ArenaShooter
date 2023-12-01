@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RehtseStudio.SimpleWaveSystem.Managers;
 
 public class Health : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Health : MonoBehaviour
     public Material materialHalfHealth;
     public Material materialLowHealth;
 
+    private SpawnManager _spawnManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,11 @@ public class Health : MonoBehaviour
         StartxPosition = transform.position.x;
         StartyPosition = transform.position.y;
         StartzPosition = transform.position.z;
+    }
+
+    private void OnEnable()
+    {
+        _spawnManager = GameObject.Find("Managers").GetComponent<SpawnManager>();
     }
 
     // Update is called once per frame
@@ -38,7 +46,7 @@ public class Health : MonoBehaviour
             Die();
         }
         //if statment that changes the color of the enemy when it takes damage
-        
+
         else if (currentHealth <= 50 && currentHealth > 25)
         {
             transform.GetComponent<Renderer>().material = materialHalfHealth;
@@ -52,9 +60,21 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy died!");
-        Respawn();
+        if (gameObject.tag == "Enemy")
+        {
+            _spawnManager.ObjectWaveCheck();
+            Debug.Log("Enemy died!");
+            currentHealth = maxHealth;
+            transform.GetComponent<Renderer>().material = materialFullHealth;
+            gameObject.SetActive(false);
+        }
+        else if (gameObject.tag == "Player")
+        {
+            Debug.Log("Player died!");
+            Respawn();
+        }
     }
+
 
     //respawn
     public void Respawn()
