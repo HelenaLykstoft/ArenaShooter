@@ -57,6 +57,7 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
                             newObject.transform.SetParent(_objectContainer.transform);
                             newObject.SetActive(false);
                             _objectDictionary[_waveSystemManager.IdOfTheObject(i, w)].Add(newObject);
+                           
                         }
                     }
                 }

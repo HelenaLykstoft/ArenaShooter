@@ -12,8 +12,11 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
 
         [Header("Waves properties")]
         private int _waveNumber;
+        private int _actualWaveNumber;
         private int _currentObjectToSpawnOnScene;
         private int _objectDestroyed = 0;
+
+        //private int _enemyHealthLastWave = 0; // remider to make this a float when merging with main branch
 
         [Header("Wait seconds between object spawn")]
         private WaitForSeconds _objectSpawnWaitForSeconds;
@@ -21,7 +24,7 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
 
         [Header("Wait second between waves")]
         private WaitForSeconds _nextWaveRoutineWaitForSeconds;
-        [Range(0f, 10f)]
+        [Range(0f, 60f)]
         [SerializeField] private float _waitForSecondBetweenWaves = 3f;
 
         [Header("Wave Text reference")]
@@ -33,14 +36,13 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         //Getting Reference to the WaveSystemManager Script and PoolManager Script
         private WaveSystemManager _waveSystemManager;
         private PoolManager _poolManager;
-        //private UIManager _uiManager;
+
 
         private void Start()
         {
 
             _waveSystemManager = GetComponent<WaveSystemManager>();
             _poolManager = GetComponent<PoolManager>();
-            //_uiManager = GameObject.Find("UI").GetComponent<UIManager>();
 
             _objectSpawnWaitForSeconds = new WaitForSeconds(_waitForSecondsBetweenObjectSpawn);
             _nextWaveRoutineWaitForSeconds = new WaitForSeconds(_waitForSecondBetweenWaves);
@@ -54,7 +56,7 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
 
         private void StartObjectWave()
         {
-            _waveSystemText.text = "Wave: " + (_waveNumber + 1) + " / " + _waveSystemManager.WavesReferenceLenght();
+            _waveSystemText.text = "" + (_actualWaveNumber + 1);
             StartCoroutine(NextWaveRoutine());
         }
 
@@ -73,12 +75,12 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
                 //Get the object to pass to the PoolManager
                 var selectedObject = _waveSystemManager.ReturnObjectTypeId(_waveNumber, i);
                 GameObject newObject = _poolManager.RequestObjectToSpawn(selectedObject);
-
                 //You can change the direcction of the object you want to spawn
                 //You can change this part of the code
                 newObject.transform.position = _objectPosition;
+                
                 newObject.SetActive(true);
-
+                
                 yield return _objectSpawnWaitForSeconds;
             }
 
@@ -92,16 +94,17 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
             {
                 _objectDestroyed = 0;
                 _waveNumber++;
+                _actualWaveNumber++;
 
                 if ((_waveNumber + 1) > _waveSystemManager.WavesReferenceLenght())
                 {
                     _waveSystemText.text = "No more Object to spawn";
                     _waveNumber = 0;
                     _objectDestroyed = 0;
-                    // _uiManager.ActivateRestartSpawnButton();
+
                 }
 
-                _waveSystemText.text = "Wave: " + (_waveNumber + 1) + " / " + _waveSystemManager.WavesReferenceLenght();
+                _waveSystemText.text = "" + (_actualWaveNumber +1);
                 StartCoroutine(NextWaveRoutine());
 
             }

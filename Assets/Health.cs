@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Health.cs" + gameObject.name);
         currentHealth = maxHealth;
         StartxPosition = transform.position.x;
         StartyPosition = transform.position.y;
@@ -29,6 +30,8 @@ public class Health : MonoBehaviour
     private void OnEnable()
     {
         _spawnManager = GameObject.Find("Managers").GetComponent<SpawnManager>();
+        currentHealth = maxHealth;
+        transform.GetComponent<Renderer>().material = materialFullHealth;
     }
 
     // Update is called once per frame
@@ -64,8 +67,6 @@ public class Health : MonoBehaviour
         {
             _spawnManager.ObjectWaveCheck();
             Debug.Log("Enemy died!");
-            currentHealth = maxHealth;
-            transform.GetComponent<Renderer>().material = materialFullHealth;
             gameObject.SetActive(false);
         }
         else if (gameObject.tag == "Player")
