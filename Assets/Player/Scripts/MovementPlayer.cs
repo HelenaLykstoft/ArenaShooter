@@ -7,7 +7,7 @@ public class MovementPlayer : MonoBehaviour
 {
     private PlayerControls m_playerControls;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
-    private bool ShouldJump => Input.GetKey(jumpKey) && rb.velocity.y == 0;
+    private bool ShouldJump;
 
     [SerializeField] private readonly float m_mouseSensitivity = 10.0f;
     private readonly float m_upDownRange = 55.0f;
@@ -15,10 +15,8 @@ public class MovementPlayer : MonoBehaviour
     float rotX = 0;
     Rigidbody rb;
 
-    [Header("Funtional Options")]
+    [Header("Functional Options")]
     [SerializeField] private bool canSprint = true;
-    [SerializeField] private bool canJump = true;
-
 
     [Header("Movement Parameters")]
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
@@ -30,7 +28,6 @@ public class MovementPlayer : MonoBehaviour
 
     [Header("Jumping")]
     [SerializeField] private float jumpForce = 8f;
-    [SerializeField] private float gravity = 30.0f;
     [SerializeField] private float jumpHeight = 10.0f;
        
 
@@ -59,6 +56,8 @@ public class MovementPlayer : MonoBehaviour
     {
         FPSMouseLook();
         SetCursorState();
+        HandleJump();
+
     }
     
 
@@ -108,10 +107,7 @@ public class MovementPlayer : MonoBehaviour
             wantedMode = CursorLockMode.None;
         }
         // TODO: MAKE Jumping not vary in height based on movement before jump
-        if (canJump)
-        { 
-            HandleJump();
-        }
+            ShouldJump = Input.GetKey(jumpKey) && rb.velocity.y == 0;
         
     }
 
@@ -119,7 +115,6 @@ public class MovementPlayer : MonoBehaviour
     {
         if (ShouldJump)
         {
-           jumpForce = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
