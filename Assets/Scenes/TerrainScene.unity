@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 451dd27d3913dde4db7198e75c378410, type: 3}
       propertyPath: m_TagString
-      value: Shop
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3551,8 +3551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95179e5ab7a86439885ba5badf7eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopPanel: {fileID: 1436463706}
-  shopObject: {fileID: 1207928852}
 --- !u!64 &1207928854
 MeshCollider:
   m_ObjectHideFlags: 0
