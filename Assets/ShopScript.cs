@@ -1,30 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class ShopScript : MonoBehaviour
 {
-    public GameObject shopPanel;
-    public GameObject shopObject;
-    // Start is called before the first frame update
+    public ArrayList shopItems = new ArrayList();
+
     void Start()
     {
-        
+        // SKal nok initialiseres efter hvert wave
+        InitializeShopItems();
     }
 
-    // Update is called once per frame
-    void Update()
+    void InitializeShopItems()
     {
-        // code to open shop when the player presses the "b" key and is near the shop
-        if (Input.GetKeyDown(KeyCode.B) && shopObject.GetComponent<ShopTrigger>().isNearShop)
+        // EKsempel på ting vi kan sælge
+        AddShopItem("Wood Armor", 1, 100, "Armor");
+        AddShopItem("Health Potion", 2, 10, "Health");
+        AddShopItem("Speed Boost", 3, 50, "Speed");
+    }
+
+    void AddShopItem(string itemName, int itemID, int itemPrice, string itemType)
+    {
+        // Hashable to be able to store key value pairs
+        Hashtable item = new Hashtable()
         {
-            OpenShop();
-        }
+            { "Name", itemName },
+            { "ID", itemID },
+            { "Price", itemPrice },
+            { "Type", itemType }
+        };
+
+        shopItems.Add(item);
     }
 
-    void OpenShop()
+    public void OpenShop()
     {
-        shopPanel.SetActive(true);
-    }
+        Debug.Log("Shop opened!");
 
+
+        // Tjek for at tingene bliver printet ud
+        foreach (Hashtable item in shopItems)
+        {
+            Debug.Log($"{item["Name"]} - ID: {item["ID"]}, Price: {item["Price"]}, Type: {item["Type"]}");
+        }
+
+    }
 }
