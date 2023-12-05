@@ -8,8 +8,8 @@ public class Health : MonoBehaviour
     private float StartxPosition;
     private float StartyPosition;
     private float StartzPosition;
-    public int currentHealth;
-    public int maxHealth = 100;
+    public float currentHealth;
+    public float maxHealth = 100;
     //material color
     public Material materialFullHealth;
     public Material materialHalfHealth;
@@ -40,9 +40,9 @@ public class Health : MonoBehaviour
 
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damageTaken)
     {
-        currentHealth -= damage;
+        currentHealth -= damageTaken;
 
         if (currentHealth <= 0)
         {

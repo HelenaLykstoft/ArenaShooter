@@ -6,20 +6,40 @@ using UnityEngine.InputSystem;
 public class MovementPlayer : MonoBehaviour
 {
     private PlayerControls m_playerControls;
-    [SerializeField] private readonly float m_mouseSensitivity = 10.0f;
+    private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
+    private bool ShouldJump;
 
+    [SerializeField] private readonly float m_mouseSensitivity = 10.0f;
     private readonly float m_upDownRange = 55.0f;
     float rotY = 0;
     float rotX = 0;
+    Rigidbody rb;
+
+    [Header("Functional Options")]
+    [SerializeField] private bool canSprint = true;
+
+    [Header("Movement Parameters")]
+    [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
+    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private float speed = 5f;
+    [SerializeField] private float sprintSpeed = 10f;
     CursorLockMode wantedMode;
+    
+
+    [Header("Jumping")]
+    [SerializeField] private float jumpForce = 8f;
+    [SerializeField] private float jumpHeight = 10.0f;
+       
+
+    
 
     public ParticleSystem muzzleFlash;
+   
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
     }
 
     void Awake()
@@ -36,13 +56,24 @@ public class MovementPlayer : MonoBehaviour
     {
         FPSMouseLook();
         SetCursorState();
+        HandleJump();
+
     }
+    
 
     // Update is called once per frame
     void Update()
     {
 
-
+        // sprinting
+        if (IsSprinting)
+        {
+            speed = sprintSpeed;
+        }
+        else
+        {
+            speed = 5f;
+        }
         // W movement
         if (Keyboard.current != null && Keyboard.current.wKey.isPressed)
         {
@@ -75,32 +106,16 @@ public class MovementPlayer : MonoBehaviour
         {
             wantedMode = CursorLockMode.None;
         }
-        // left click to shoot
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        // TODO: MAKE Jumping not vary in height based on movement before jump
+            ShouldJump = Input.GetKey(jumpKey) && rb.velocity.y == 0;
+        
+    }
+
+    private void HandleJump()
+    {
+        if (ShouldJump)
         {
-            muzzleFlash.Play();
-            RaycastHit hit;
-
-            // ray from center of screen
-            Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
-
-
-            if (Physics.Raycast(ray, out hit))
-            {
-
-                if (hit.transform.tag == "Enemy")
-                {
-                    Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-                    Debug.Log("Hit");
-                    //Destroy(hit.transform.gameObject);
-
-                    hit.transform.GetComponent<Health>().TakeDamage(10);
-                }
-                Debug.DrawLine(ray.origin, hit.point, Color.red, 1);
-            }else{
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("No Hit");
-            }
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 
