@@ -37,6 +37,10 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         private WaveSystemManager _waveSystemManager;
         private PoolManager _poolManager;
 
+        private bool _isNewWave = true;
+
+        private int enemyHealthCurrentWave = 0;
+
 
         private void Start()
         {
@@ -63,6 +67,7 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         private IEnumerator NextWaveRoutine()
         {
             yield return _nextWaveRoutineWaitForSeconds;
+            _isNewWave = true;
             StartCoroutine(SpawnObjectRoutine());
         }
 
@@ -78,9 +83,9 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
                 //You can change the direcction of the object you want to spawn
                 //You can change this part of the code
                 newObject.transform.position = _objectPosition;
-                
+                newObject = SetHealthForWave(newObject);
                 newObject.SetActive(true);
-                
+                Debug.Log("health: " + newObject.GetComponent<Health>().maxHealth);
                 yield return _objectSpawnWaitForSeconds;
             }
 
@@ -115,6 +120,18 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         {
             _objectPosition = _objPos;
         }
+
+        private GameObject SetHealthForWave(GameObject obj){
+            
+            if(_isNewWave == true){
+                _isNewWave = false; 
+                enemyHealthCurrentWave = (int)(obj.GetComponent<Health>().maxHealth * 1.2f);
+            }
+            obj.GetComponent<Health>().maxHealth = enemyHealthCurrentWave;
+            return obj;}
+        
+
+
 
     }
 
