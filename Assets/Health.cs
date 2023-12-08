@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
     private float StartzPosition;
     public float currentHealth;
     public float maxHealth = 100;
+
+
     //material color
     public Material materialFullHealth;
     public Material materialHalfHealth;
@@ -20,7 +22,7 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Health.cs" + gameObject.name);
+        
         currentHealth = maxHealth;
         StartxPosition = transform.position.x;
         StartyPosition = transform.position.y;
@@ -84,4 +86,5 @@ public class Health : MonoBehaviour
         transform.GetComponent<Renderer>().material = materialFullHealth;
         transform.position = new Vector3(StartxPosition, StartyPosition, StartzPosition);
     }
+
 }

@@ -16,7 +16,8 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         private int _currentObjectToSpawnOnScene;
         private int _objectDestroyed = 0;
         private bool _isNewWave = true;
-        private int enemyHealthCurrentWave = 0;
+        private float baseHealth = 0;
+        private float enemyHealthCurrentWave = 0;
 
         [Header("Wait seconds between object spawn")]
         private WaitForSeconds _objectSpawnWaitForSeconds;
@@ -86,7 +87,6 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
                 newObject.transform.position = ObjectPositionToSpawn();
                 newObject = SetHealthForWave(newObject);
                 newObject.SetActive(true);
-                Debug.Log("health: " + newObject.GetComponent<Health>().maxHealth);
                 yield return _objectSpawnWaitForSeconds;
             }
 
@@ -95,7 +95,6 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         public void ObjectWaveCheck()
         {
             _objectDestroyed++;
-            Debug.Log("Object Destroyed: " + _objectDestroyed + " / " + _currentObjectToSpawnOnScene);
             if (_objectDestroyed == _currentObjectToSpawnOnScene)
             {
                 _objectDestroyed = 0;
@@ -126,7 +125,6 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         public Vector3 ObjectPositionToSpawn()
         {
             int randomPosition = Random.Range(1, 5);
-            Debug.Log("Random Position: " + randomPosition);
             switch (randomPosition)
             {
                 case 1:
@@ -146,11 +144,16 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         }
 
         private GameObject SetHealthForWave(GameObject obj)
-        {
-            if (_isNewWave == true)
+        {   
+            
+            if(_actualWaveNumber == 0)
             {
+                baseHealth = obj.GetComponent<Health>().maxHealth;
+            }
+            if (_isNewWave == true)
+            {   
                 _isNewWave = false;
-                enemyHealthCurrentWave = (int)(obj.GetComponent<Health>().maxHealth * 1.2f);
+                enemyHealthCurrentWave = baseHealth + (baseHealth * 0.2f * _actualWaveNumber);
             }
             obj.GetComponent<Health>().maxHealth = enemyHealthCurrentWave;
             return obj;
