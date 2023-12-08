@@ -66,12 +66,12 @@ public class Health : MonoBehaviour
         if (gameObject.tag == "Enemy")
         {
             _spawnManager.ObjectWaveCheck();
-            Debug.Log("Enemy died!");
+           
             gameObject.SetActive(false);
         }
         else if (gameObject.tag == "Player")
         {
-            Debug.Log("Player died!");
+            
             Respawn();
         }
     }
