@@ -31,7 +31,6 @@ public class Health : MonoBehaviour
     {
         _spawnManager = GameObject.Find("Managers").GetComponent<SpawnManager>();
         currentHealth = maxHealth;
-        transform.GetComponent<Renderer>().material = materialFullHealth;
     }
 
     // Update is called once per frame
@@ -47,16 +46,6 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0)
         {
             Die();
-        }
-        //if statment that changes the color of the enemy when it takes damage
-
-        else if (currentHealth <= 50 && currentHealth > 25)
-        {
-            transform.GetComponent<Renderer>().material = materialHalfHealth;
-        }
-        else if (currentHealth <= 25 && currentHealth > 0)
-        {
-            transform.GetComponent<Renderer>().material = materialLowHealth;
         }
 
     }
