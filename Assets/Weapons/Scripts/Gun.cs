@@ -82,4 +82,12 @@ public class Gun : MonoBehaviour
         Destroy(ImpactGO, 2f);
       }
     }
+
+    public int GetCurrentAmmo(){
+        return currentAmmo;
+    }
+
+    public int GetTotalAmmo(){
+        return maxAmmo;
+    }
 }

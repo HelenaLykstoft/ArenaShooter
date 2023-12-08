@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RehtseStudio.SimpleWaveSystem.Managers;
 
+
 public class Health : MonoBehaviour
 {
     private float StartxPosition;
@@ -16,6 +17,8 @@ public class Health : MonoBehaviour
     public Material materialLowHealth;
 
     private SpawnManager _spawnManager;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +40,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void TakeDamage(float damageTaken)
