@@ -9,12 +9,12 @@ public class PlayerUIScript : MonoBehaviour
     [SerializeField] private GameObject shopCanvas;
     [SerializeField] private bool isPaused;
     
-
     [SerializeField] private TMP_Text TextBox;
     [SerializeField] private TMP_Text AmmoBox;
     private Health PlayerHealth;
     private Gun PlayerAmmo;
-    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,8 @@ public class PlayerUIScript : MonoBehaviour
         PlayerHealth = GetComponentInParent<Health>();
         GameObject firstGun = GameObject.Find("firstGun");
         PlayerAmmo = firstGun.GetComponent<Gun>();
-        
+
+    
     }
 
     // Update is called once per frame
@@ -51,11 +52,13 @@ public class PlayerUIScript : MonoBehaviour
 
     void ActivateShop()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         AudioListener.pause = true;
         shopCanvas.SetActive(true);
+        isPaused = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
    }
 
    public void DeactivateShop()
@@ -66,5 +69,6 @@ public class PlayerUIScript : MonoBehaviour
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
    }
 }

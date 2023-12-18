@@ -157,7 +157,6 @@ RectTransform:
   m_Children:
   - {fileID: 1788366262}
   - {fileID: 1632167840}
-  - {fileID: 1093381360}
   - {fileID: 787850661}
   m_Father: {fileID: 683524382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7104,7 +7103,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1093381360}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13611,6 +13610,13 @@ MeshCollider:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9085011684284145080, guid: 0190d11682d7f614e966a3574c7f1339, type: 3}
   m_PrefabInstance: {fileID: 1175799290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1521770823439229609 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4568096787179850982, guid: ac62a13ee7e10644284b3a8fe6e1a9eb, type: 3}
@@ -13619,7 +13625,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Script: {fileID: 11500000, guid: f43ff73c376bbf64b975a82185116861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -13859,3 +13864,4 @@ SceneRoots:
   - {fileID: 1280959759}
   - {fileID: 753712920}
   - {fileID: 984090495}
+  - {fileID: 1274230550}

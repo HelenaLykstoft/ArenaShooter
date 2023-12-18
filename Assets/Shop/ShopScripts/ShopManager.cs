@@ -18,25 +18,36 @@ public class ShopManager : MonoBehaviour
     private Health PlayerHealth;
     private Gun PlayerAmmo;
 
+    private GameObject WaveSystem;
+
+    private SpawnManager SpawnManager;
+
 
     void Start()
     {
+        for (int i = 0; i < shopItemsSO.Length; i++){
+            shopPanelsGO[i].SetActive(true);
+        }
+        coinUI.text = "Coins test: " + coins.ToString();
+        LoadPanels();
+        CheckPurchaseable();
+
         GameObject Player = GameObject.Find("Player");
         if (Player != null){
             PlayerHealth = Player.GetComponent<Health>();
             Debug.Log(PlayerHealth.currentHealth);
+        }
+
+        GameObject WaveSystem = GameObject.Find("WaveSystem");
+        if (WaveSystem != null){
+            SpawnManager = WaveSystem.GetComponent<SpawnManager>();
+            Debug.Log("Something w spawn manager");
         }
             
             //GameObject firstGun = GameObject.Find("firstGun");
             //PlayerAmmo = firstGun.GetComponent<Gun>();
             //Debug.Log("Cannot find Gun component");
         
-        for (int i = 0; i < shopItemsSO.Length; i++){
-            shopPanelsGO[i].SetActive(true);
-        }
-        coinUI.text = "Coins: " + coins.ToString();
-        LoadPanels();
-        CheckPurchaseable();
         
     }
 
@@ -70,6 +81,7 @@ public class ShopManager : MonoBehaviour
             coins = coins - shopItemsSO[btnNbr].baseCost;
             coinUI.text = "Coins: " + coins.ToString();
             CheckPurchaseable();
+        }
 
             switch (shopItemsSO[btnNbr].itemType){
             case ShopItemType.Health:
@@ -94,7 +106,7 @@ public class ShopManager : MonoBehaviour
         }
 
     }
-    }
+
 
 
     public void LoadPanels()
