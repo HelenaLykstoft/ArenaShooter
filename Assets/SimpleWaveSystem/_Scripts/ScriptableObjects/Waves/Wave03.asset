@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawnOnThisWave:
   - objectID: 1
-    gameObjectToSpawn: {fileID: 8259024443187954389, guid: 0b52a9fe8ca0ca742945222d7c7e9750, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 8259024443187954389, guid: 0b52a9fe8ca0ca742945222d7c7e9750, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 8259024443187954389, guid: 0b52a9fe8ca0ca742945222d7c7e9750, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 8259024443187954389, guid: 0b52a9fe8ca0ca742945222d7c7e9750, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 8259024443187954389, guid: 0b52a9fe8ca0ca742945222d7c7e9750, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}

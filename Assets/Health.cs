@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public float maxHealth = 100;
 
+    bool isdie = false;
+
 
     //material color
     public Material materialFullHealth;
@@ -36,7 +38,6 @@ public class Health : MonoBehaviour
     {
         _spawnManager = GameObject.Find("Managers").GetComponent<SpawnManager>();
         currentHealth = maxHealth;
-        transform.GetComponent<Renderer>().material = materialFullHealth;
     }
 
     // Update is called once per frame
@@ -52,16 +53,6 @@ public class Health : MonoBehaviour
         {
             Die();
         }
-        //if statment that changes the color of the enemy when it takes damage
-
-        else if (currentHealth <= 50 && currentHealth > 25)
-        {
-            transform.GetComponent<Renderer>().material = materialHalfHealth;
-        }
-        else if (currentHealth <= 25 && currentHealth > 0)
-        {
-            transform.GetComponent<Renderer>().material = materialLowHealth;
-        }
 
     }
 
@@ -75,13 +66,16 @@ public class Health : MonoBehaviour
         }
         else if (gameObject.tag == "Player")
         {
+            if(isdie == false){
+            FindObjectOfType<Gameover>().Endgame();
+            isdie = true;
+            }
             
-            Respawn();
         }
     }
 
 
-    //respawn
+    //respawn can be as an agument
     public void Respawn()
     {
         currentHealth = maxHealth;

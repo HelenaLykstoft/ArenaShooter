@@ -67,7 +67,12 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
 
         private IEnumerator NextWaveRoutine()
         {
+            Debug.Log("before yield return");
+            if (_waveNumber == 0)
+                yield return new WaitForSeconds(3f);
+            else
             yield return _nextWaveRoutineWaitForSeconds;
+            Debug.Log("after yield return");
             _isNewWave = true;
             StartCoroutine(SpawnObjectRoutine());
         }
