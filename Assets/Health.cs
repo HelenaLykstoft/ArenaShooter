@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     public float currentHealth;
     public float maxHealth = 100;
 
+    bool isdie = false;
+
 
     //material color
     public Material materialFullHealth;
@@ -64,13 +66,16 @@ public class Health : MonoBehaviour
         }
         else if (gameObject.tag == "Player")
         {
+            if(isdie == false){
+            FindObjectOfType<Gameover>().Endgame();
+            isdie = true;
+            }
             
-            Respawn();
         }
     }
 
 
-    //respawn
+    //respawn can be as an agument
     public void Respawn()
     {
         currentHealth = maxHealth;
