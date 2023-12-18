@@ -6452,7 +6452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1040052270404494578, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
       propertyPath: _waitForSecondBetweenWaves
-      value: 3
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1040052270404494578, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
       propertyPath: _waitForSecondsBetweenObjectSpawn
