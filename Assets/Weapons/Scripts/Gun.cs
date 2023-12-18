@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Gun : MonoBehaviour
 {
-  public float damage = 10f;
-  public float range = 100f;
+  public float damage = 20f;
+  public float range = 10f;
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
@@ -44,6 +44,12 @@ public class Gun : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+
+        if(Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
+        {
+            StartCoroutine(Reload());
+            return;
         }
     }
 
