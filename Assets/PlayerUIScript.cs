@@ -6,7 +6,10 @@ using TMPro;
 
 public class PlayerUIScript : MonoBehaviour
 {
-    // Text box.
+    [SerializeField] private GameObject shopCanvas;
+    [SerializeField] private bool isPaused;
+    
+
     [SerializeField] private TMP_Text TextBox;
     [SerializeField] private TMP_Text AmmoBox;
     private Health PlayerHealth;
@@ -25,6 +28,17 @@ public class PlayerUIScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.B))
+         {
+              isPaused = !isPaused;
+         }
+            if(isPaused){
+                ActivateShop();
+            }
+            else{
+                DeactivateShop();
+
+         }
         if (PlayerHealth != null){
             TextBox.text = "" + PlayerHealth.currentHealth;
         }
@@ -34,4 +48,23 @@ public class PlayerUIScript : MonoBehaviour
         }
     
     }
+
+    void ActivateShop()
+    {
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+        shopCanvas.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+   }
+
+   public void DeactivateShop()
+   {
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+        shopCanvas.SetActive(false);
+        isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+   }
 }
