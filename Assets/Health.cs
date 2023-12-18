@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using RehtseStudio.SimpleWaveSystem.Managers;
 
+
 public class Health : MonoBehaviour
 {
     private float StartxPosition;
@@ -10,6 +11,8 @@ public class Health : MonoBehaviour
     private float StartzPosition;
     public float currentHealth;
     public float maxHealth = 100;
+
+
     //material color
     public Material materialFullHealth;
     public Material materialHalfHealth;
@@ -17,10 +20,12 @@ public class Health : MonoBehaviour
 
     private SpawnManager _spawnManager;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Health.cs" + gameObject.name);
+        
         currentHealth = maxHealth;
         StartxPosition = transform.position.x;
         StartyPosition = transform.position.y;
@@ -36,7 +41,6 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void TakeDamage(float damageTaken)
@@ -55,12 +59,12 @@ public class Health : MonoBehaviour
         if (gameObject.tag == "Enemy")
         {
             _spawnManager.ObjectWaveCheck();
-            Debug.Log("Enemy died!");
+           
             gameObject.SetActive(false);
         }
         else if (gameObject.tag == "Player")
         {
-            Debug.Log("Player died!");
+            
             Respawn();
         }
     }
@@ -73,4 +77,5 @@ public class Health : MonoBehaviour
         transform.GetComponent<Renderer>().material = materialFullHealth;
         transform.position = new Vector3(StartxPosition, StartyPosition, StartzPosition);
     }
+
 }

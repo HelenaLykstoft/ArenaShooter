@@ -15,8 +15,9 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         private int _actualWaveNumber;
         private int _currentObjectToSpawnOnScene;
         private int _objectDestroyed = 0;
-
-        //private int _enemyHealthLastWave = 0; // remider to make this a float when merging with main branch
+        private bool _isNewWave = true;
+        private float baseHealth = 0;
+        private float enemyHealthCurrentWave = 0;
 
         [Header("Wait seconds between object spawn")]
         private WaitForSeconds _objectSpawnWaitForSeconds;
@@ -31,15 +32,15 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         [SerializeField] private Text _waveSystemText;
 
         [Header("Position / destination where the objects are going to spawn")]
-        [SerializeField] private Vector3 _objectPosition;
-
+        [SerializeField] private Vector3 _objectPosition1;
+        [SerializeField] private Vector3 _objectPosition2;
+        [SerializeField] private Vector3 _objectPosition3;
+        [SerializeField] private Vector3 _objectPosition4;
         //Getting Reference to the WaveSystemManager Script and PoolManager Script
         private WaveSystemManager _waveSystemManager;
         private PoolManager _poolManager;
 
-        private bool _isNewWave = true;
 
-        private int enemyHealthCurrentWave = 0;
 
 
         private void Start()
@@ -82,10 +83,10 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
                 GameObject newObject = _poolManager.RequestObjectToSpawn(selectedObject);
                 //You can change the direcction of the object you want to spawn
                 //You can change this part of the code
-                newObject.transform.position = _objectPosition;
+                //You can use the method ObjectPositionToSpawn(Vector3 _objPos) to set the position of the object or you can use the method ObjectPositionToSpawn() to set a random position
+                newObject.transform.position = ObjectPositionToSpawn();
                 newObject = SetHealthForWave(newObject);
                 newObject.SetActive(true);
-                Debug.Log("health: " + newObject.GetComponent<Health>().maxHealth);
                 yield return _objectSpawnWaitForSeconds;
             }
 
@@ -94,7 +95,6 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         public void ObjectWaveCheck()
         {
             _objectDestroyed++;
-            Debug.Log("Object Destroyed: " + _objectDestroyed + " / " + _currentObjectToSpawnOnScene);
             if (_objectDestroyed == _currentObjectToSpawnOnScene)
             {
                 _objectDestroyed = 0;
@@ -109,28 +109,62 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
 
                 }
 
-                _waveSystemText.text = "" + (_actualWaveNumber +1);
+                _waveSystemText.text = "" + (_actualWaveNumber + 1);
                 StartCoroutine(NextWaveRoutine());
 
             }
         }
 
-        //You can access this Public Method if you like to change the positon of the object
-        public void ObjectPositionToSpawn(Vector3 _objPos)
+        //You can access this Public Method if you like to change the positon of the object Fixed spwan position
+        /*public void ObjectPositionToSpawn(Vector3 _objPos) 
         {
             _objectPosition = _objPos;
+        }*/
+
+        //You can access this Public Method if you like to change the positon of the object Random spwan position
+        public Vector3 ObjectPositionToSpawn()
+        {
+            int randomPosition = Random.Range(1, 5);
+            switch (randomPosition)
+            {
+                case 1:
+                    return _objectPosition1;
+            
+                case 2:
+                    return _objectPosition2;
+            
+                case 3:
+                    return _objectPosition3;
+                
+                case 4:
+                    return _objectPosition4;
+                    
+            }
+            return _objectPosition1;
         }
 
-        private GameObject SetHealthForWave(GameObject obj){
+        private GameObject SetHealthForWave(GameObject obj)
+        {   
             
-            if(_isNewWave == true){
-                _isNewWave = false; 
-                enemyHealthCurrentWave = (int)(obj.GetComponent<Health>().maxHealth * 1.2f);
+            if(_actualWaveNumber == 0)
+            {
+                baseHealth = obj.GetComponent<Health>().maxHealth;
             }
-            obj.GetComponent<Health>().maxHealth = enemyHealthCurrentWave;
-            return obj;}
-        
+            if (_isNewWave == true)
+            {   
+                _isNewWave = false;
+                enemyHealthCurrentWave = baseHealth + (baseHealth * 0.2f * _actualWaveNumber);
+            }
+            if(obj.name.Contains("Boss") || obj.name.Contains("boss"))
+            {
+                enemyHealthCurrentWave = enemyHealthCurrentWave * 10;
+            }
 
+            obj.GetComponent<Health>().maxHealth = enemyHealthCurrentWave;
+            return obj;
+        }
+
+        
 
 
     }
