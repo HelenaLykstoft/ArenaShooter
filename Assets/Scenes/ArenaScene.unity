@@ -6136,7 +6136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c895e387592ea4185c46c97eeff661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 30
   timeBetweenShooting: 1
   spread: 0.06
   range: 30
@@ -11647,7 +11647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1040052270404494578, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
       propertyPath: _waitForSecondBetweenWaves
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1040052270404494578, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
       propertyPath: _waitForSecondsBetweenObjectSpawn
