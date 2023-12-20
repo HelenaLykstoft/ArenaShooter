@@ -6,13 +6,14 @@ using UnityEngine;
 public class InteractUI : MonoBehaviour
 {
     [SerializeField] public bool inRange;
-    [SerializeField] public bool UIactive;
+    [SerializeField] public bool isPaused;
 
-    public GameObject shopUI;
+    [SerializeField] private GameObject shopUI;
 
-    void Start()
+    public void Start()
     {
         shopUI.SetActive(false);
+        isPaused = false;
         Cursor.visible = false;
     }
 
@@ -20,15 +21,15 @@ public class InteractUI : MonoBehaviour
     {
         if (inRange && Input.GetKeyDown(KeyCode.B))
         {
-            UIactive = true;
-            PauseGame();
-            Debug.Log("UIactive is true");
+            isPaused = !isPaused;
         }
-        
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (isPaused)
         {
-            ResumeGame();
-            Debug.Log("UIactive is false");
+            ActivateShop();
+        }
+        else
+        {
+            DeactivateShop();
         }
     }
 
@@ -49,21 +50,19 @@ public class InteractUI : MonoBehaviour
         }
     }
 
-    public void PauseGame(){
-        Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+    void ActivateShop()
+    {
+        Time.timeScale = 0;
         AudioListener.pause = true;
-        shopUI.SetActive(true);
-    
-    }
+        Cursor.lockState = CursorLockMode.None;
+   }
 
-    public void ResumeGame(){
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
+   public void DeactivateShop()
+   {
+        Time.timeScale = 1;
         AudioListener.pause = false;
-        shopUI.SetActive(false);
-        UIactive = false;
-        
-    }
+        isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+   }
 }

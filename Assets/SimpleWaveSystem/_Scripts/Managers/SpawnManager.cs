@@ -41,10 +41,8 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         private PoolManager _poolManager;
 
 
-
-
         private void Start()
-        {
+        {   
 
             _waveSystemManager = GetComponent<WaveSystemManager>();
             _poolManager = GetComponent<PoolManager>();

@@ -108,6 +108,11 @@ public class MovementPlayer : MonoBehaviour
         }
         // TODO: MAKE Jumping not vary in height based on movement before jump
             ShouldJump = Input.GetKey(jumpKey) && rb.velocity.y == 0;
+
+        // Code to maybe fix cursor not being there when shop opens
+        if (Input.GetKeyDown(KeyCode.B)){
+            wantedMode = CursorLockMode.None;
+        }
         
     }
 
@@ -150,6 +155,7 @@ public class MovementPlayer : MonoBehaviour
 
             Camera.main.transform.localRotation = Quaternion.Euler(rotY, 0, 0);
         }
+        
     }
 
     void SetCursorState()
@@ -157,5 +163,6 @@ public class MovementPlayer : MonoBehaviour
         Cursor.lockState = wantedMode;
         // Hide cursor when locking
         Cursor.visible = (CursorLockMode.Locked != wantedMode);
+        
     }
 }

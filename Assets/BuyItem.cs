@@ -23,11 +23,11 @@ public class BuyItem : MonoBehaviour
             switch (displayedItem.itemType){
                 case "IncreaseHealth":
                     PlayerHealth.IncreaseHealth(5);
-                    Debug.Log("You bought a weapon.");
+                    Debug.Log("You got 5 increased health.");
                     break;
                 case "RefillHealth":
                     PlayerHealth.RefillHealth();
-                    Debug.Log("You bought armor.");
+                    Debug.Log("You refilled your health.");
                     break;
                 //case "IncreaseAmmo":
                     //PlayerAmmo.IncreaseAmmo(5);
@@ -41,7 +41,6 @@ public class BuyItem : MonoBehaviour
                     Debug.Log("You bought something.");
                     break;
             }
-            Debug.Log("You bought " + displayedItem.itemName + " for " + displayedItem.itemCost + " gold.");
         } else {
             Debug.Log("You don't have enough gold to buy " + displayedItem.itemName + ".");
         }

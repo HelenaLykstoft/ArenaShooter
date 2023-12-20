@@ -11,7 +11,7 @@ public class ItemDisplay : MonoBehaviour
     // Logic
     public string itemName;
     public string itemDescription;
-    public Sprite itemIcon;
+    //public Sprite itemIcon;
     public int itemCost;
     public string itemType;
 
@@ -19,32 +19,32 @@ public class ItemDisplay : MonoBehaviour
 
     public TextMeshProUGUI itemNameText;
     public TextMeshProUGUI itemDescriptionText;
-    public Image itemIconImage;
+    //public Image itemIconImage;
     public TextMeshProUGUI itemCostText;
 
     public void Start(){
         itemName = displayedItem.name;
         itemDescription = displayedItem.description;
-        itemIcon = displayedItem.icon;
+        //itemIcon = displayedItem.icon;
         itemCost = displayedItem.cost;
         itemType = displayedItem.selectedItemType.ToString();
 
         itemNameText.text = itemName;
         itemDescriptionText.text = itemDescription;
-        itemIconImage.sprite = itemIcon;
+        //itemIconImage.sprite = itemIcon;
         itemCostText.text = itemCost.ToString();
     }
 
     public void Display(){
         itemName = displayedItem.name;
         itemDescription = displayedItem.description;
-        itemIcon = displayedItem.icon;
+        //itemIcon = displayedItem.icon;
         itemCost = displayedItem.cost;
         itemType = displayedItem.selectedItemType.ToString();
 
         itemNameText.text = itemName;
         itemDescriptionText.text = itemDescription;
-        itemIconImage.sprite = itemIcon;
+        //itemIconImage.sprite = itemIcon;
         itemCostText.text = itemCost.ToString();
     }
 
