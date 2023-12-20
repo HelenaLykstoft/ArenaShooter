@@ -18,9 +18,6 @@ public class ShopManager : MonoBehaviour
     private Health PlayerHealth;
     private Gun PlayerAmmo;
 
-    private GameObject WaveSystem;
-
-    private SpawnManager SpawnManager;
 
 
     void Start()
@@ -38,11 +35,7 @@ public class ShopManager : MonoBehaviour
             Debug.Log(PlayerHealth.currentHealth);
         }
 
-        GameObject WaveSystem = GameObject.Find("WaveSystem");
-        if (WaveSystem != null){
-            SpawnManager = WaveSystem.GetComponent<SpawnManager>();
-            Debug.Log("Something w spawn manager");
-        }
+        
             
             //GameObject firstGun = GameObject.Find("firstGun");
             //PlayerAmmo = firstGun.GetComponent<Gun>();
