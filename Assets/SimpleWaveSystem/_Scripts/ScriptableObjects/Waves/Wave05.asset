@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawnOnThisWave:
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
     gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
   - objectID: 1
     gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
