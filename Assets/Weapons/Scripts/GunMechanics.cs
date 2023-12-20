@@ -15,6 +15,7 @@ public class GunMechanics : MonoBehaviour
 
     //bools
     bool shooting, readyToShoot, reloading;
+    bool Firing;
 
     //Reference
     public Camera fpsCam;
@@ -44,6 +45,7 @@ public class GunMechanics : MonoBehaviour
         //Check if allowed to hold down button and take corresponding input
         if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
         else shooting = Input.GetKeyDown(KeyCode.Mouse0);
+        
 
         //Reloading
         if (bulletsLeft <= 0)
@@ -90,9 +92,17 @@ public class GunMechanics : MonoBehaviour
         //graphics
         
         muzzleFlash.Play();
+        StartCoroutine(Recoil());
         
-        bulletsLeft--;    
+        //Shooting effects
+        bulletsLeft--;
         bulletsShot--;
+        Invoke("ResetShot", timeBetweenShooting);
+
+
+
+
+    
     }
 
     private void ResetShot()
@@ -109,5 +119,14 @@ public class GunMechanics : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         bulletsLeft = magazineSize;
         reloading = false;
+    }
+
+    private IEnumerator Recoil()
+    {
+        Firing = true;
+        animator.SetBool("Firing", true);
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("Firing", false);
+        Firing = false;
     }
 }
