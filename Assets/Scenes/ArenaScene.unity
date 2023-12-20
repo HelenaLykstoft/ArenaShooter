@@ -1792,6 +1792,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1583163842}
+  - {fileID: 1419480442}
   m_Father: {fileID: 589218531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7578,7 +7579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
-  UIactive: 0
+  isPaused: 0
   shopUI: {fileID: 1583163841}
 --- !u!65 &1132819297
 BoxCollider:
@@ -8363,12 +8364,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419480439}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -604, y: -411.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 799487099}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430634364 stripped
 GameObject:
@@ -8806,12 +8807,10 @@ MonoBehaviour:
   displayedItem: {fileID: 11400000, guid: eeef32dc2a2895f44953d1445817a7bf, type: 2}
   itemName: 
   itemDescription: 
-  itemIcon: {fileID: 0}
   itemCost: 0
   itemType: 
   itemNameText: {fileID: 799240767}
   itemDescriptionText: {fileID: 413339479}
-  itemIconImage: {fileID: 0}
   itemCostText: {fileID: 1589705269}
 --- !u!1 &1589705267
 GameObject:
@@ -14535,7 +14534,6 @@ SceneRoots:
   - {fileID: 1103392753}
   - {fileID: 134362563}
   - {fileID: 1465971254}
-  - {fileID: 1419480442}
   - {fileID: 585346417}
   - {fileID: 4104484322444404538}
   - {fileID: 2819805768394554450}
