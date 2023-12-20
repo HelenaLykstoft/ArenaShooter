@@ -83,4 +83,18 @@ public class Health : MonoBehaviour
         transform.position = new Vector3(StartxPosition, StartyPosition, StartzPosition);
     }
 
+    public void IncreaseHealth(int healthIncrease)
+    {
+        currentHealth += healthIncrease;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
+    public void RefillHealth()
+    {
+        currentHealth = maxHealth;
+    }
+
 }
