@@ -165,4 +165,9 @@ public class MovementPlayer : MonoBehaviour
         Cursor.visible = (CursorLockMode.Locked != wantedMode);
         
     }
+    
+    void SetWantedMode(CursorLockMode wantedMode)
+    {
+        wantedMode = CursorLockMode.Locked;
+    }
 }
