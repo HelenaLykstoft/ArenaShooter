@@ -8763,7 +8763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1583163842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8814,6 +8814,7 @@ MonoBehaviour:
   itemNameText: {fileID: 799240767}
   itemDescriptionText: {fileID: 413339479}
   itemCostText: {fileID: 1589705269}
+  itemTypeText: {fileID: 0}
 --- !u!1 &1589705267
 GameObject:
   m_ObjectHideFlags: 0

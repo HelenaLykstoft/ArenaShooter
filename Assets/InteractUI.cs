@@ -62,20 +62,22 @@ public class InteractUI : MonoBehaviour
         Time.timeScale = 0;
         AudioListener.pause = true;
     
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Debug.Log("Cursor is unlocked");
-        Debug.Log("Lockstate is " + Cursor.lockState);
-        Debug.Log("Cursor: " + Cursor.visible);
-
-        GameObject.Find("Player").GetComponent<MovementPlayer>().enabled = false;
+        //Debug.Log("Cursor is unlocked");
+        //Debug.Log("Lockstate is " + Cursor.lockState);
+        //Debug.Log("Cursor: " + Cursor.visible);
+        var movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
+        movementPlayer.SetWantedMode(CursorLockMode.None);
+        movementPlayer.enabled = false;
     
         GameObject.Find("firstGun").GetComponent<Gun>().enabled = false;
     
         Debug.Log("Player and Gun are disabled");
 
         shopUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        
     }
 
     void DeactivateShop()
@@ -86,17 +88,19 @@ public class InteractUI : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Debug.Log("Cursor is locked");
-        Debug.Log("Lockstate is " + Cursor.lockState);
-        Debug.Log("Cursor: " + Cursor.visible);
+        //Debug.Log("Cursor is locked");
+        //Debug.Log("Lockstate is " + Cursor.lockState);
+        //Debug.Log("Cursor: " + Cursor.visible);
 
-
-        GameObject.Find("Player").GetComponent<MovementPlayer>().enabled = true;
+        var movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
+        movementPlayer.enabled = true;
         GameObject.Find("firstGun").GetComponent<Gun>().enabled = true;
 
         Debug.Log("Player and Gun are enabled");
 
         shopUI.SetActive(false);
+
+        movementPlayer.SetWantedMode(CursorLockMode.Locked);
 
     }
 

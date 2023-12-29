@@ -166,8 +166,8 @@ public class MovementPlayer : MonoBehaviour
         
     }
     
-    void SetWantedMode(CursorLockMode wantedMode)
+    public void SetWantedMode(CursorLockMode mode)
     {
-        wantedMode = CursorLockMode.Locked;
+        wantedMode = mode;
     }
 }

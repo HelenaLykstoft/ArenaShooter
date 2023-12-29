@@ -21,13 +21,14 @@ public class ItemDisplay : MonoBehaviour
     public TextMeshProUGUI itemDescriptionText;
     //public Image itemIconImage;
     public TextMeshProUGUI itemCostText;
+    public TextMeshProUGUI itemTypeText;
 
     public void Start(){
         itemName = displayedItem.name;
         itemDescription = displayedItem.description;
         //itemIcon = displayedItem.icon;
         itemCost = displayedItem.cost;
-        itemType = displayedItem.selectedItemType.ToString();
+        //itemType = displayedItem.selectedItemType.ToString();
 
         itemNameText.text = itemName;
         itemDescriptionText.text = itemDescription;
@@ -46,6 +47,7 @@ public class ItemDisplay : MonoBehaviour
         itemDescriptionText.text = itemDescription;
         //itemIconImage.sprite = itemIcon;
         itemCostText.text = itemCost.ToString();
+        itemTypeText.text = itemType;
     }
 
 }
