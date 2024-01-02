@@ -9,8 +9,6 @@ public class InteractUI : MonoBehaviour
     [SerializeField] public bool isPaused;
 
     [SerializeField] private GameObject shopUI;
-    [SerializeField] private GameObject MovementPlayer;
-    [SerializeField] private GameObject Gun;
 
     public void Start()
     {
@@ -67,6 +65,8 @@ public class InteractUI : MonoBehaviour
         //Debug.Log("Cursor: " + Cursor.visible);
         var movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
         movementPlayer.SetWantedMode(CursorLockMode.None);
+
+
         movementPlayer.enabled = false;
     
         GameObject.Find("firstGun").GetComponent<Gun>().enabled = false;

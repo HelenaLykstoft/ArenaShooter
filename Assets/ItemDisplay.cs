@@ -28,7 +28,7 @@ public class ItemDisplay : MonoBehaviour
         itemDescription = displayedItem.description;
         //itemIcon = displayedItem.icon;
         itemCost = displayedItem.cost;
-        //itemType = displayedItem.selectedItemType.ToString();
+        itemType = displayedItem.selectedItemType.ToString();
 
         itemNameText.text = itemName;
         itemDescriptionText.text = itemDescription;

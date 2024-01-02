@@ -102,17 +102,12 @@ public class MovementPlayer : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * speed);
         }
         // escape locked cursor
-        if (Keyboard.current != null && Keyboard.current.escapeKey.isPressed)
-        {
-            wantedMode = CursorLockMode.None;
-        }
+        //if (Keyboard.current != null && Keyboard.current.escapeKey.isPressed)
+        //{
+            //wantedMode = CursorLockMode.None;
+        //}
         // TODO: MAKE Jumping not vary in height based on movement before jump
             ShouldJump = Input.GetKey(jumpKey) && rb.velocity.y == 0;
-
-        // Code to maybe fix cursor not being there when shop opens
-        if (Input.GetKeyDown(KeyCode.B)){
-            wantedMode = CursorLockMode.None;
-        }
         
     }
 
