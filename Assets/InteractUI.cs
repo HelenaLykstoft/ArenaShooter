@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RehtseStudio.SimpleWaveSystem.Managers;
 
 
 public class InteractUI : MonoBehaviour
@@ -9,6 +10,9 @@ public class InteractUI : MonoBehaviour
     [SerializeField] public bool isPaused;
 
     [SerializeField] private GameObject shopUI;
+
+
+
 
     public void Start()
     {
@@ -19,9 +23,11 @@ public class InteractUI : MonoBehaviour
     }
 
     public void Update()
-    {
+    {  
+        //Debug.Log("Wavesystem: " + GameObject.Find("WaveSystem").transform.GetChild(0).GetComponentsInChildren<SpawnManager>());
+        //var manager = GameObject.Find("Managers").GetComponent<SpawnManager>();
         
-        if (inRange && Input.GetKeyDown(KeyCode.B))
+        if (inRange && Input.GetKeyDown(KeyCode.B) && GameObject.Find("Managers").GetComponent<SpawnManager>().isBetweenRounds)
         {
             isPaused = !isPaused;
 

@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 116982140}
   - component: {fileID: 116982139}
   - component: {fileID: 116982138}
+  - component: {fileID: 116982141}
   m_Layer: 0
   m_Name: IncreaseAmmo
   m_TagString: Untagged
@@ -280,7 +281,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 116982139}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 116982141}
+        m_TargetAssemblyTypeName: ChangeItems, Assembly-CSharp
+        m_MethodName: ChangeItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &116982139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +332,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116982136}
   m_CullTransparentMesh: 1
+--- !u!114 &116982141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116982136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3434bc9efbe6c8047800f9eb31173690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDisplayScript: {fileID: 1583163843}
+  itemToChange: {fileID: 11400000, guid: 9dc168240c6f8814083e891a893d28a4, type: 2}
 --- !u!1 &134362557
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5ef682833cd384587c683172498586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldDrop: 0
   currentHealth: 0
   maxHealth: 100
   materialFullHealth: {fileID: 2100000, guid: a3dffade676269441ae13beba19e5c77, type: 2}
@@ -8808,11 +8836,9 @@ MonoBehaviour:
   itemName: 
   itemDescription: 
   itemCost: 0
-  itemType: 
   itemNameText: {fileID: 799240767}
   itemDescriptionText: {fileID: 413339479}
   itemCostText: {fileID: 1589705269}
-  itemTypeText: {fileID: 0}
 --- !u!1 &1589705267
 GameObject:
   m_ObjectHideFlags: 0

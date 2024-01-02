@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa7f37dc627b3664d8535f9471cfcc07, type: 3}
       propertyPath: m_Name
-      value: EnemyTpose 1
+      value: EnemyTpose
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa7f37dc627b3664d8535f9471cfcc07, type: 3}
       propertyPath: m_TagString
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e5ef682833cd384587c683172498586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldDrop: 10
   currentHealth: 0
   maxHealth: 50
   materialFullHealth: {fileID: 2100000, guid: 4299f5f9861e25a40984f9984045da3c, type: 2}

@@ -25,7 +25,6 @@ public class PauseMenu : MonoBehaviour
         DeactivateMenu();
       }
     }
-    Debug.Log("Is paused: " + isPaused);
   }
 
   void ActivateMenu()

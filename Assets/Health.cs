@@ -6,6 +6,8 @@ using RehtseStudio.SimpleWaveSystem.Managers;
 
 public class Health : MonoBehaviour
 {
+
+    [SerializeField] int goldDrop = 0;
     private float StartxPosition;
     private float StartyPosition;
     private float StartzPosition;
@@ -63,6 +65,7 @@ public class Health : MonoBehaviour
             _spawnManager.ObjectWaveCheck();
            
             gameObject.SetActive(false);
+            GameObject.Find("Player").GetComponent<Wallet>().gold += goldDrop;
         }
         else if (gameObject.tag == "Player")
         {
@@ -85,11 +88,8 @@ public class Health : MonoBehaviour
 
     public void IncreaseHealth(int healthIncrease)
     {
-        currentHealth += healthIncrease;
-        if (currentHealth > maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
+        //currentHealth += healthIncrease;
+        maxHealth += healthIncrease;
     }
 
     public void RefillHealth()

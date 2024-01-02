@@ -10,6 +10,8 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
     public class SpawnManager : MonoBehaviour
     {
 
+        public bool isBetweenRounds = false;
+
         [Header("Waves properties")]
         private int _waveNumber;
         private int _actualWaveNumber;
@@ -66,11 +68,13 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         private IEnumerator NextWaveRoutine()
         {
             Debug.Log("before yield return");
+            isBetweenRounds = true;
             if (_waveNumber == 0)
                 yield return new WaitForSeconds(3f);
             else
             yield return _nextWaveRoutineWaitForSeconds;
             Debug.Log("after yield return");
+            isBetweenRounds = false;
             _isNewWave = true;
             StartCoroutine(SpawnObjectRoutine());
         }

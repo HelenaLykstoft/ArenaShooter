@@ -90,4 +90,9 @@ public class Gun : MonoBehaviour
     public int GetTotalAmmo(){
         return maxAmmo;
     }
+
+    public int IncreaseAmmo(int ammoIncrease){
+        maxAmmo += ammoIncrease;
+        return maxAmmo;
+    }
 }
