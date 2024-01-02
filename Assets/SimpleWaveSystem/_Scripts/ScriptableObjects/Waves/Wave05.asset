@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawnOnThisWave:
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: b8ee27277327d7d4c9839ea8b6a59df3, type: 3}
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 2
-    gameObjectToSpawn: {fileID: 627824189217290999, guid: a8b37da24e11e884f9dba5dcacd79f7e, type: 3}
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}

@@ -59,16 +59,17 @@ private void OnDrawGizmosSelected()
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, playerLayer);
             
       
-        if (!playerInAttackRange)
-        {
-            ChasePlayer();
-        }
         if (playerInAttackRange)
         {
             //make the enemy look at the player
-            transform.LookAt(Player.position);
+            transform.LookAt(new Vector3(Player.position.x, transform.position.y, Player.position.z));
+            
             
             AttackPlayer();
+        }
+        else
+        {
+            ChasePlayer();
         }
        
         
@@ -93,7 +94,6 @@ private void OnDrawGizmosSelected()
            {
             //add knockback
             other.gameObject.GetComponent<Health>().TakeDamage(damage);
-            Player.GetComponent<Rigidbody>().AddForce(transform.forward * 10, ForceMode.Impulse);
            }
            
         }

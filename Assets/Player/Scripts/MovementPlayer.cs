@@ -7,6 +7,12 @@ public class MovementPlayer : MonoBehaviour
 {
     private PlayerControls m_playerControls;
     private bool IsSprinting => canSprint && Input.GetKey(sprintKey);
+
+    private float maxStamina = 100;
+    private float currentStamina;
+
+    private float staminaDrain = 20f;
+
     private bool ShouldJump;
 
     [SerializeField] private readonly float m_mouseSensitivity = 10.0f;
@@ -40,6 +46,7 @@ public class MovementPlayer : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        currentStamina = maxStamina;
     }
 
     void Awake()
@@ -68,10 +75,24 @@ public class MovementPlayer : MonoBehaviour
         // sprinting
         if (IsSprinting)
         {
-            speed = sprintSpeed;
+            if (currentStamina > 0)
+            {
+                currentStamina -= staminaDrain * Time.deltaTime;
+                speed = sprintSpeed;
+                Debug.Log(currentStamina);	
+            }
+            else
+            {
+                speed = 5f;
+            }
+            
         }
         else
         {
+            if (currentStamina < maxStamina)
+            {
+                currentStamina += (staminaDrain/2) * Time.deltaTime;
+            }
             speed = 5f;
         }
         // W movement
