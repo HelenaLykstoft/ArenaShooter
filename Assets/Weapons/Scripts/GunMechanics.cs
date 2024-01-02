@@ -129,4 +129,17 @@ public class GunMechanics : MonoBehaviour
         animator.SetBool("Firing", false);
         Firing = false;
     }
+
+    public int GetCurrentAmmo(){
+        return bulletsLeft;
+    }
+
+    public int GetMagazineSize(){
+        return magazineSize;
+    }
+
+    public int IncreaseAmmo(int amount){
+        magazineSize += amount;
+        return magazineSize;
+    }
 }

@@ -8,13 +8,13 @@ public class BuyItem : MonoBehaviour
     public ItemDisplay displayedItem;
 
     private Health PlayerHealth;
-    private Gun PlayerAmmo;
+    private GunMechanics PlayerAmmo;
 
 
     public void Start(){
         PlayerHealth = GameObject.Find("Player").GetComponent<Health>();
         Debug.Log(PlayerHealth);
-        PlayerAmmo = GameObject.Find("firstGun").GetComponent<Gun>();
+        PlayerAmmo = GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>();
         Debug.Log(PlayerAmmo);
     }
 

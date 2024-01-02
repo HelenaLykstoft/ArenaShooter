@@ -10,15 +10,15 @@ public class PlayerUIScript : MonoBehaviour
     [SerializeField] private TMP_Text TextBox;
     [SerializeField] private TMP_Text AmmoBox;
     private Health PlayerHealth;
-    private Gun PlayerAmmo;
+    private GunMechanics PlayerAmmo;
     
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerHealth = GetComponentInParent<Health>();
-        GameObject firstGun = GameObject.Find("firstGun");
-        PlayerAmmo = firstGun.GetComponent<Gun>();
+        GameObject shotGun = GameObject.Find("TripleBarrelShotgun");
+        PlayerAmmo = shotGun.GetComponent<GunMechanics>();
         
     }
 
@@ -30,7 +30,7 @@ public class PlayerUIScript : MonoBehaviour
         }
 
         if (PlayerAmmo != null){
-            AmmoBox.text = "" + PlayerAmmo.GetCurrentAmmo() + "/" + PlayerAmmo.GetTotalAmmo();
+            AmmoBox.text = "" + PlayerAmmo.GetCurrentAmmo() + "/" + PlayerAmmo.GetMagazineSize();
         }
     
     }

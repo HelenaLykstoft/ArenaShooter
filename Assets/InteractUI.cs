@@ -73,8 +73,8 @@ public class InteractUI : MonoBehaviour
         movementPlayer.SetWantedMode(CursorLockMode.None);
 
         movementPlayer.enabled = false;
-    
-        GameObject.Find("firstGun").GetComponent<Gun>().enabled = false;
+
+        GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>().enabled = false;
     
         Debug.Log("Player and Gun are disabled");
 
@@ -99,7 +99,7 @@ public class InteractUI : MonoBehaviour
 
         var movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
         movementPlayer.enabled = true;
-        GameObject.Find("firstGun").GetComponent<Gun>().enabled = true;
+        GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>().enabled = true;
 
         Debug.Log("Player and Gun are enabled");
 
