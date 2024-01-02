@@ -24,9 +24,6 @@ public class InteractUI : MonoBehaviour
 
     public void Update()
     {  
-        //Debug.Log("Wavesystem: " + GameObject.Find("WaveSystem").transform.GetChild(0).GetComponentsInChildren<SpawnManager>());
-        //var manager = GameObject.Find("Managers").GetComponent<SpawnManager>();
-        
         if (inRange && Input.GetKeyDown(KeyCode.B) && GameObject.Find("Managers").GetComponent<SpawnManager>().isBetweenRounds)
         {
             isPaused = !isPaused;
@@ -34,13 +31,17 @@ public class InteractUI : MonoBehaviour
             if (isPaused)
             {
                 ActivateShop();
-                Debug.Log("Shop is active");
             }
             else
             {
                 DeactivateShop();
                 Debug.Log("Shop is inactive");
             }
+        } else if (isPaused && GameObject.Find("Managers").GetComponent<SpawnManager>().isBetweenRounds == false)
+        {
+            DeactivateShop();
+            isPaused = false;
+            Debug.Log("Shop is inactive");
         }
     }
 
@@ -49,7 +50,6 @@ public class InteractUI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inRange = true;
-            Debug.Log("inRange is true");
         }
     }
 
@@ -63,7 +63,7 @@ public class InteractUI : MonoBehaviour
 
     void ActivateShop()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         AudioListener.pause = true;
     
         //Debug.Log("Cursor is unlocked");
@@ -71,7 +71,6 @@ public class InteractUI : MonoBehaviour
         //Debug.Log("Cursor: " + Cursor.visible);
         var movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
         movementPlayer.SetWantedMode(CursorLockMode.None);
-
 
         movementPlayer.enabled = false;
     
@@ -88,7 +87,7 @@ public class InteractUI : MonoBehaviour
 
     void DeactivateShop()
     {
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         AudioListener.pause = false;
     
 

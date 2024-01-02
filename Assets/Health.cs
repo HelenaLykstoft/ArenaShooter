@@ -88,7 +88,7 @@ public class Health : MonoBehaviour
 
     public void IncreaseHealth(int healthIncrease)
     {
-        //currentHealth += healthIncrease;
+        currentHealth += healthIncrease;
         maxHealth += healthIncrease;
     }
 
