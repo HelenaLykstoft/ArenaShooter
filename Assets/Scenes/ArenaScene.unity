@@ -8262,7 +8262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  timeBetweenShooting: 0
+  timeBetweenShooting: 0.1
   spread: 0
   range: 40
   reloadTime: 0.75
