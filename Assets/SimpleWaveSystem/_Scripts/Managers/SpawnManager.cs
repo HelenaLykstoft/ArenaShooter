@@ -44,7 +44,7 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
 
 
         private void Start()
-        {   
+        {
 
             _waveSystemManager = GetComponent<WaveSystemManager>();
             _poolManager = GetComponent<PoolManager>();
@@ -67,13 +67,12 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
 
         private IEnumerator NextWaveRoutine()
         {
-            Debug.Log("before yield return");
+
             isBetweenRounds = true;
             if (_waveNumber == 0)
                 yield return new WaitForSeconds(3f);
             else
-            yield return _nextWaveRoutineWaitForSeconds;
-            Debug.Log("after yield return");
+                yield return _nextWaveRoutineWaitForSeconds;
             isBetweenRounds = false;
             _isNewWave = true;
             StartCoroutine(SpawnObjectRoutine());
@@ -136,33 +135,33 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
             {
                 case 1:
                     return _objectPosition1;
-            
+
                 case 2:
                     return _objectPosition2;
-            
+
                 case 3:
                     return _objectPosition3;
-                
+
                 case 4:
                     return _objectPosition4;
-                    
+
             }
             return _objectPosition1;
         }
 
         private GameObject SetHealthForWave(GameObject obj)
-        {   
-            
-            if(_actualWaveNumber == 0)
+        {
+
+            if (_actualWaveNumber == 0)
             {
                 baseHealth = obj.GetComponent<Health>().maxHealth;
             }
             if (_isNewWave == true)
-            {   
+            {
                 _isNewWave = false;
                 enemyHealthCurrentWave = baseHealth + (baseHealth * 0.2f * _actualWaveNumber);
             }
-            if(obj.name.Contains("Boss") || obj.name.Contains("boss"))
+            if (obj.name.Contains("Boss") || obj.name.Contains("boss"))
             {
                 enemyHealthCurrentWave = enemyHealthCurrentWave * 10;
             }
@@ -171,7 +170,7 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
             return obj;
         }
 
-        
+
 
 
     }

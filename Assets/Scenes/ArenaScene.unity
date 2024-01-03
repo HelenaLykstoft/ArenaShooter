@@ -8215,7 +8215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430634364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8078118765d27dd43bca08aee5cbbc19, type: 3}
   m_Name: 
@@ -8249,6 +8249,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1430634371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430634364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c895e387592ea4185c46c97eeff661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  timeBetweenShooting: 0
+  spread: 0
+  range: 40
+  reloadTime: 0.75
+  timeBetweenShots: 0
+  magazineSize: 8
+  bulletsPerTap: 1
+  allowButtonHold: 0
+  maxAmmo: 16
+  fpsCam: {fileID: 963194227}
+  muzzleFlash: {fileID: 940666322}
+  impactEffect: {fileID: 1815151298}
+  animator: {fileID: 1430634368}
 --- !u!1 &1445262829
 GameObject:
   m_ObjectHideFlags: 0
@@ -9011,7 +9037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ca4ea82cbbc110a4ea55050c1c1c5d95, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9029,6 +9055,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca4ea82cbbc110a4ea55050c1c1c5d95, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1430634368}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ca4ea82cbbc110a4ea55050c1c1c5d95, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1430634371}
   m_SourcePrefab: {fileID: 100100000, guid: ca4ea82cbbc110a4ea55050c1c1c5d95, type: 3}
 --- !u!1 &1815151298
 GameObject:
@@ -14112,6 +14141,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TripleBarrelShotgun
       objectReference: {fileID: 0}
+    - target: {fileID: 2529105248683793130, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2905665628149891152, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
@@ -14156,6 +14189,10 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 4149655402373736610, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
+      propertyPath: maxAmmo
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4149655402373736610, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
       propertyPath: magazineSize
       value: 3

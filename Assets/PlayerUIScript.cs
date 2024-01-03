@@ -30,7 +30,7 @@ public class PlayerUIScript : MonoBehaviour
         }
 
         if (PlayerAmmo != null){
-            AmmoBox.text = "" + PlayerAmmo.GetCurrentAmmo() + "/" + PlayerAmmo.GetMagazineSize();
+            AmmoBox.text = "" + PlayerAmmo.GetCurrentAmmo() + "/" + PlayerAmmo.GetCurrentAmmoCount();
         }
     
     }
