@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a5f9cffda3e36b40a99fef4ae41d2be, type: 3}
-  m_Name: RefillHealth
+  m_Name: IncreaseDamage
   m_EditorClassIdentifier: 
-  itemName: Refill health
-  description: This item refills all your health
-  cost: 20
-  selectedItemType: 1
+  itemName: Increase damage
+  description: Increases your damage to enemies by 2
+  cost: 40
+  selectedItemType: 4

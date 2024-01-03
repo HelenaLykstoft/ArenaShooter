@@ -74,7 +74,25 @@ public class InteractUI : MonoBehaviour
 
         movementPlayer.enabled = false;
 
-        GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>().enabled = false;
+    
+        if (GameObject.Find("TripleBarrelShotgun") != null){
+            GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>().enabled = false;
+            Debug.Log("Hello im in if statement");
+        } else if (GameObject.Find("firstGun") != null){
+            GameObject.Find("firstGun").GetComponent<GunMechanics>().enabled = false;
+            Debug.Log("Hello im in else if statement");
+        }
+
+
+        //if (GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>().activeInHierarchy){
+            //GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>().enabled = false;
+        //} else if (GameObject.Find("firstGun").GetComponent<Gun>().activeInHierarchy) {
+            //GameObject.Find("firstGun").GetComponent<Gun>().enabled = false;
+        //}
+
+
+
+    
     
         Debug.Log("Player and Gun are disabled");
 
@@ -99,7 +117,15 @@ public class InteractUI : MonoBehaviour
 
         var movementPlayer = GameObject.Find("Player").GetComponent<MovementPlayer>();
         movementPlayer.enabled = true;
-        GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>().enabled = true;
+       
+        if (GameObject.Find("TripleBarrelShotgun") != null){
+            GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>().enabled = true;
+            Debug.Log("Hello im in if statement");
+        } else if (GameObject.Find("firstGun") != null){
+            GameObject.Find("firstGun").GetComponent<GunMechanics>().enabled = true;
+            Debug.Log("Hello im in else if statement");
+        }
+        
 
         Debug.Log("Player and Gun are enabled");
 

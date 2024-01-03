@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5f9cffda3e36b40a99fef4ae41d2be, type: 3}
   m_Name: IncreaseHealth
   m_EditorClassIdentifier: 
-  name: Increase max health
+  itemName: Increase health
   description: This item increases the max health by 5
-  icon: {fileID: 0}
   cost: 30
   selectedItemType: 0

@@ -8,7 +8,7 @@ public class ItemObject : ScriptableObject
     public string itemName;
     public string description;
     //public Sprite icon;
-    public int cost;
+    public float cost;
 
     public ItemTypes selectedItemType = new ItemTypes();
 
@@ -18,6 +18,7 @@ public class ItemObject : ScriptableObject
         refillHealth,
         increaseAmmo,
         refillAmmo,
+        IncreaseDamage,
     }
     
 }

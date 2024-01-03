@@ -12,7 +12,7 @@ public class ItemDisplay : MonoBehaviour
     public string itemName;
     public string itemDescription;
     //public Sprite itemIcon;
-    public int itemCost;
+    public float itemCost;
 
     // Graphics
 

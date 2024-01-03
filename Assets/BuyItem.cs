@@ -8,19 +8,29 @@ public class BuyItem : MonoBehaviour
     public ItemDisplay displayedItem;
 
     private Health PlayerHealth;
-    private GunMechanics PlayerAmmo;
+    private GunMechanics CurrentGun;
 
 
     public void Start(){
-        PlayerHealth = GameObject.Find("Player").GetComponent<Health>();
-        Debug.Log(PlayerHealth);
-        PlayerAmmo = GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>();
-        Debug.Log(PlayerAmmo);
+        if (GameObject.Find("Player") != null)
+        {
+            PlayerHealth = GameObject.Find("Player").GetComponent<Health>();
+        }
+        if (GameObject.Find("TrippleBarrelShotgun") != null)
+        {
+            CurrentGun = GameObject.Find("TrippleBarrelShotgun").GetComponent<GunMechanics>();
+        }
+        else if (GameObject.Find("firstGun") != null)
+        {
+            CurrentGun = GameObject.Find("firstGun").GetComponent<GunMechanics>();
+        }
     }
 
     public void Buy(){
         if (walletScript.gold >= displayedItem.itemCost){
-            walletScript.gold -= displayedItem.itemCost;
+            walletScript.gold -= (int)displayedItem.itemCost;
+
+            Debug.Log(displayedItem.itemName);
             // KØB ITEM
             switch (displayedItem.itemName){
                 case "IncreaseHealth":
@@ -32,13 +42,17 @@ public class BuyItem : MonoBehaviour
                     Debug.Log("You refilled your health.");
                     break;
                 case "IncreaseAmmo":
-                    PlayerAmmo.IncreaseAmmo(5);
+                    CurrentGun.IncreaseAmmo(3);
                     Debug.Log("You increased your max ammo.");
                     break;
-                //case "RefillAmmo":
-                    //PlayerAmmo.RefillAmmo();
-                    //Debug.Log("You bought a potion.");
-                    //break;
+                case "RefillAmmo":
+                    CurrentGun.RefillAmmo();
+                    Debug.Log("You refilled your ammo.");
+                    break;
+                case "IncreaseDamage":
+                    CurrentGun.IncreaseDamage(2);
+                    Debug.Log("You increased your damage.");
+                    break;
                 default:
                     Debug.Log("You bought something.");
                     break;

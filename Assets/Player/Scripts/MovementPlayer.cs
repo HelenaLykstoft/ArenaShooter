@@ -78,8 +78,7 @@ public class MovementPlayer : MonoBehaviour
             if (currentStamina > 0)
             {
                 currentStamina -= staminaDrain * Time.deltaTime;
-                speed = sprintSpeed;
-                Debug.Log(currentStamina);	
+                speed = sprintSpeed;	
             }
             else
             {

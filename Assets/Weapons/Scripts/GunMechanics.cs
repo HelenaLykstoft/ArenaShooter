@@ -129,7 +129,12 @@ public class GunMechanics : MonoBehaviour
             currentAmmo -= magazineSize - bulletsLeft;
             bulletsLeft = magazineSize;
         }
-        else if (currentAmmo < magazineSize)
+        else if (currentAmmo < magazineSize && currentAmmo + bulletsLeft >= magazineSize)
+        {
+            currentAmmo -= magazineSize - bulletsLeft;
+            bulletsLeft = magazineSize;
+        }
+        else if (currentAmmo < magazineSize )
         {
             bulletsLeft += currentAmmo;
             currentAmmo = 0;
@@ -150,20 +155,30 @@ public class GunMechanics : MonoBehaviour
     {
         return bulletsLeft;
     }
+    public int GetCurrentAmmoCount()
+    {
+        return currentAmmo;
+    }
 
     public int GetMagazineSize()
     {
         return magazineSize;
     }
 
-    public int IncreaseAmmo(int amount)
+    public void IncreaseAmmo(int amount)
     {
-        magazineSize += amount;
-        return magazineSize;
+        maxAmmo += amount;
+        currentAmmo += amount;
     }
 
-    public int GetCurrentAmmoCount()
+    public void RefillAmmo()
     {
-        return currentAmmo;
+        currentAmmo = maxAmmo;
     }
+
+    public void IncreaseDamage(int amount)
+    {
+        damage += amount;
+    }
+
 }
