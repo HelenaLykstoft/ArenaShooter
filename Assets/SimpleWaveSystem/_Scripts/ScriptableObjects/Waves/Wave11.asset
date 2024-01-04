@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09827b945f677234d9035bf4610a8a22, type: 3}
+  m_Name: Wave11
+  m_EditorClassIdentifier: 
+  objectToSpawnOnThisWave:
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}
+  - objectID: 2
+    gameObjectToSpawn: {fileID: 7960504364689206467, guid: a8c582f1e605f3748a28329be7b677e7, type: 3}

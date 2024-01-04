@@ -10,9 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09827b945f677234d9035bf4610a8a22, type: 3}
-  m_Name: Wave03
+  m_Name: Wave08
   m_EditorClassIdentifier: 
   objectToSpawnOnThisWave:
+  - objectID: 1
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
+  - objectID: 1
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
+  - objectID: 1
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
+  - objectID: 1
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
+  - objectID: 1
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
+  - objectID: 1
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
+  - objectID: 1
+    gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1
     gameObjectToSpawn: {fileID: 627824189217290999, guid: 1f587081b42d97d49a900db17a0e77de, type: 3}
   - objectID: 1

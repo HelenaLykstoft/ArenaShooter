@@ -16,9 +16,9 @@ public class BuyItem : MonoBehaviour
         {
             PlayerHealth = GameObject.Find("Player").GetComponent<Health>();
         }
-        if (GameObject.Find("TrippleBarrelShotgun") != null)
+        if (GameObject.Find("TripleBarrelShotgun") != null)
         {
-            CurrentGun = GameObject.Find("TrippleBarrelShotgun").GetComponent<GunMechanics>();
+            CurrentGun = GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>();
         }
         else if (GameObject.Find("firstGun") != null)
         {
