@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: IncreaseHealth
   m_EditorClassIdentifier: 
   itemName: Increase health
-  description: This item increases the max health by 5
+  description: This item increases the max health by 10
   cost: 30
   selectedItemType: 0

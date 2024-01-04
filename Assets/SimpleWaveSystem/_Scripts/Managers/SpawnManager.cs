@@ -158,15 +158,26 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
             }
             if (_isNewWave == true)
             {
+                if (_actualWaveNumber % 5 == 0)
+                {
+                    baseHealth += baseHealth * 0.30f;
+                }
+
+
                 _isNewWave = false;
                 enemyHealthCurrentWave = baseHealth + (baseHealth * 0.2f * _actualWaveNumber);
+
             }
             if (obj.name.Contains("Boss") || obj.name.Contains("boss"))
             {
-                enemyHealthCurrentWave = enemyHealthCurrentWave * 10;
-            }
 
-            obj.GetComponent<Health>().maxHealth = enemyHealthCurrentWave;
+                obj.GetComponent<Health>().maxHealth = enemyHealthCurrentWave * 10;
+
+                return obj;
+
+            }
+            Debug.Log("Enemy health: " + enemyHealthCurrentWave);
+
             return obj;
         }
 

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: IncreaseDamage
   m_EditorClassIdentifier: 
   itemName: Increase damage
-  description: Increases your damage to enemies by 2
+  description: Increases your damage to enemies by 5
   cost: 40
   selectedItemType: 4

@@ -3108,7 +3108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
       propertyPath: _wavesReference.Array.size
-      value: 5
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
       propertyPath: _wavesReference.Array.data[0]
@@ -3128,6 +3128,34 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 38bcc575790180646853e4e93b0dfcb2, type: 2}
     - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
       propertyPath: _wavesReference.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0995e111a7aa84846b4c2c537e1156b6, type: 2}
+    - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
+      propertyPath: _wavesReference.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 26a37e549858cd243adeb916f15f419f, type: 2}
+    - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
+      propertyPath: _wavesReference.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 943f8f21899a36b4dacc0a857a7b0ab9, type: 2}
+    - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
+      propertyPath: _wavesReference.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: d9ffe5b86e67ff04d8c29ddc510fc73b, type: 2}
+    - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
+      propertyPath: _wavesReference.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: a2ea81b8918b0a94f8b3bd49ae92a6c8, type: 2}
+    - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
+      propertyPath: _wavesReference.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c60e17dc79a53b40aa8fc0c14316b35, type: 2}
+    - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
+      propertyPath: _wavesReference.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 23eb2ee0dd05a4c41abc2696169071ad, type: 2}
+    - target: {fileID: 1040052270404494579, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
+      propertyPath: _wavesReference.Array.data[11]
       value: 
       objectReference: {fileID: 11400000, guid: 0995e111a7aa84846b4c2c537e1156b6, type: 2}
     - target: {fileID: 1040052270755884096, guid: b2bce4bdff3ff3c4d8f60517683709b8, type: 3}
@@ -4647,12 +4675,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4149655402373736610, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
+      propertyPath: range
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149655402373736610, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
+      propertyPath: damage
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4149655402373736610, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 4149655402373736610, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
       propertyPath: maxAmmo
-      value: 6
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4149655402373736610, guid: 835f9ce27fbbdac45b9e4229e8fd58bd, type: 3}
       propertyPath: magazineSize
@@ -4885,10 +4921,18 @@ PrefabInstance:
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 5542669412875613642, guid: 67fbfcf71d4f4454a83ab0490aae8594, type: 3}
+      propertyPath: maxAmmo
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 6910298888572568836, guid: 67fbfcf71d4f4454a83ab0490aae8594, type: 3}
       propertyPath: fpsCam
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 6910298888572568836, guid: 67fbfcf71d4f4454a83ab0490aae8594, type: 3}
+      propertyPath: maxAmmo
+      value: 24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

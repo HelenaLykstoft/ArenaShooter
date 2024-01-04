@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Refill health
   description: This item refills all your health
-  cost: 20
+  cost: 15
   selectedItemType: 1

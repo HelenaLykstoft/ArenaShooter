@@ -34,7 +34,7 @@ public class BuyItem : MonoBehaviour
             // KØB ITEM
             switch (displayedItem.itemName){
                 case "IncreaseHealth":
-                    PlayerHealth.IncreaseHealth(5);
+                    PlayerHealth.IncreaseHealth(10);
                     Debug.Log("You got 5 increased health.");
                     break;
                 case "RefillHealth":
@@ -42,7 +42,7 @@ public class BuyItem : MonoBehaviour
                     Debug.Log("You refilled your health.");
                     break;
                 case "IncreaseAmmo":
-                    CurrentGun.IncreaseAmmo(3);
+                    CurrentGun.IncreaseAmmo(CurrentGun.GetMagazineSize());
                     Debug.Log("You increased your max ammo.");
                     break;
                 case "RefillAmmo":
@@ -50,7 +50,7 @@ public class BuyItem : MonoBehaviour
                     Debug.Log("You refilled your ammo.");
                     break;
                 case "IncreaseDamage":
-                    CurrentGun.IncreaseDamage(2);
+                    CurrentGun.IncreaseDamage(5);
                     Debug.Log("You increased your damage.");
                     break;
                 default:

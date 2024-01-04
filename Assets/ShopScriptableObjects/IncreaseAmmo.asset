@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: IncreaseAmmo
   m_EditorClassIdentifier: 
   itemName: Increase ammo
-  description: Increases the max ammo by 5
+  description: Increases the max ammo by a magazine size
   cost: 40
   selectedItemType: 2
