@@ -13,16 +13,15 @@ public class PlayerUIScript : MonoBehaviour
     private GunMechanics CurrentGun;
 
 
-    // Start is called before the first frame update
-    void Start()
+    public void playerSetup()
     {
         if (GameObject.Find("Player") != null)
         {
             PlayerHealth = GameObject.Find("Player").GetComponent<Health>();
         }
-        if (GameObject.Find("TrippleBarrelShotgun") != null)
+        if (GameObject.Find("TripleBarrelShotgun") != null)
         {
-            CurrentGun = GameObject.Find("TrippleBarrelShotgun").GetComponent<GunMechanics>();
+            CurrentGun = GameObject.Find("TripleBarrelShotgun").GetComponent<GunMechanics>();
         }
         else if (GameObject.Find("firstGun") != null)
         {

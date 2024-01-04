@@ -45,7 +45,7 @@ public class Gameover : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
         
     }
 }

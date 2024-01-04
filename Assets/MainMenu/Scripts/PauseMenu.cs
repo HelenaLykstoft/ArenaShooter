@@ -53,8 +53,10 @@ public class PauseMenu : MonoBehaviour
 
   public void BackToMainMenu()
   {
-    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    SceneManager.LoadScene(0, LoadSceneMode.Single);
     Cursor.lockState = CursorLockMode.None;
+    Time.timeScale = 1;
+    Cursor.visible = true;
   }
 
 

@@ -20,6 +20,8 @@ public class GunMechanics : MonoBehaviour
     bool shooting, readyToShoot, reloading;
     bool Firing;
 
+    public bool inSelection;
+
     //Reference
     public Camera fpsCam;
     public RaycastHit hit;
@@ -42,6 +44,7 @@ public class GunMechanics : MonoBehaviour
 
         //Set ammo display
         //ammoText.SetText(bulletsLeft + " / " + magazineSize);
+        inSelectionScreen();
     }
 
     private void MyInput()
@@ -149,6 +152,18 @@ public class GunMechanics : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("Firing", false);
         Firing = false;
+    }
+
+    private void inSelectionScreen()
+    {
+        if (inSelection == true)
+        {
+            animator.SetBool("inSelection", true);
+        }
+        else
+        {
+            animator.SetBool("inSelection", false);
+        }
     }
 
     public int GetCurrentAmmo()
